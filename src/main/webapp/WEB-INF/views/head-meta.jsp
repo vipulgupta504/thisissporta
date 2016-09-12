@@ -1,3 +1,8 @@
+
+<%@page isELIgnored="false" %>
+  
+  <title>This is Sporta</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   
   
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/references/css/bootstrap.min.css">

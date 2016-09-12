@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +10,9 @@
 <link rel="stylesheet" type="text/css" href="resources/references/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <script type="text/javascript" src="${pageContext.request.contextPath}/resources/references/js/angular.min.js"></script>
+
 <style>
   body
 {
@@ -49,7 +53,23 @@
 
 </style>
 </head>
-<body>
+
+<!--  -->
+
+<script type="text/javascript">
+
+	var myApp = angular.module("myApp",[]);
+	
+	myApp.controller("myCtrl",function($scope)
+			{
+				$scope.data =  ${Categories};
+		});
+
+</script>
+
+<!--  -->
+
+<body ng-app="myApp" ng-controller="myCtrl" >
 
 <c:import url="head.jsp"/>
 <br>
@@ -59,12 +79,33 @@
         <div class="col-md-12 col-sm-6">
             <div class="axe">
                 
-                <h2 class="title"><b>ABOUT US</b></h2>
+                <h2 class="title"><b>Categories</b></h2>
                 <div class="box-content">
                     <p class="description">
-                    Imagine your favourite sports items all under one place! ThisIsSporta is a web portal designed exclusively for all sports items-be it football,cricket or sports shoes,this site will help in serving all your desires. This is first-of-its-kind sports web portal which has been launched in India. We at THISISSPORTA offer latest products at reasonable prices. We deal in various sporting brand majors such as adidas,nike and many others. Also you can be assured of safe payment gateway and free home delivery of your desired products within the stipulated time.So dont wait and switch to the products tab and start shopping!!
+                    <a href="addcategory" class="btn btn-success">Add Category</a>
                     
-                      </p>  
+                    <br>
+                    
+                    <!--  -->
+                    
+                    <div ng-repeat="x in data">
+                    
+                    	<div>
+                    		<label>Category Name: &nbsp;&nbsp; {{x.CategoryName}} </label>
+                    		
+                    		<a href="updatecategory/{{x.CategoryId}}" class="btn btn-danger">Update</a>
+                    		
+                    		<a href="DeleteCategoryFromDB/{{x.CategoryId}}" class="btn btn-info">Delete</a>
+                    	</div>
+                    
+                    </div>
+                    
+                    <!--  -->
+                    
+                    <br>
+                    
+                    
+                    </p>  
                 </div>
             </div>
         </div>

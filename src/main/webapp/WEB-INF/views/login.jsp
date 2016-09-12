@@ -7,24 +7,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <c:import url="head-meta.jsp" />
 <title>login</title>
-
 </head>
 <style>
 body {
-   background: url(resources/images/texture5.jpg);
-   background-attachment: fixed; 
+   background-color: lightblue;   
 }
 /* #wrap{
 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #D3D8E8));
 /* Webkit (Chrome 11+) */ 
  background-image: linear-gradient(to bottom, #FFFFFF 0%, 	#8B4513 100%);
 }  
-legend{
- color:white;
- font-size:45px;
- font-weight:bold; 
- text-align: center;
-}
+
 .signup-btn {
  /* background: #79bc64;
   background-image: -webkit-linear-gradient(top, #79bc64, #578843); */
@@ -41,19 +34,7 @@ legend{
   border: solid #3b6e22  1px;
   text-decoration: none;
 }
-.signup-btn:hover {
-  
-  background-image: -webkit-linear-gradient(top, #79bc64, #5e7056);
-  background-image: linear-gradient(to bottom, #79bc64, #5e7056);
-  text-decoration: none; 
-}
-.form .form-control { margin-bottom: 10px; }
-@media (min-width:768px) {
- #home{
-  margin-top:50px;
- }
- 
-}
+
 </style>
 <body>
 <c:import url="/head" />
@@ -66,23 +47,7 @@ legend{
 		 <div class="row">
         <div class="col-md-6 col-md-offset-3">
             
-              
-            
-            <form action="login" method="post">
-					    		
-					    		
-					    		<c:if test="${param.error != null}">
-	                                <div class="alert alert-danger">
-	                                    <p>Invalid Username and password.</p>
-	                                </div>
-	                            </c:if>
-	                            <c:if test="${param.logout != null}">
-	                                <div class="alert alert-success">
-	                                    <p>You have been logged out successfully.</p>
-	                                </div>
-	                            </c:if>
-            
-            <legend>LOGIN</legend> 
+            <p>LOGIN</p> 
                     
                     <div class="row">
                         <div class="col-xs-6 col-md-6">
@@ -95,12 +60,12 @@ legend{
                     </div>
                     
                    
-                    			  <br />
+                    			  <br>
           
                     <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">
                         Login</button>
                         <br><br>
-            </form>          
+                      
           </div>
 </div>            
 </div>

@@ -3,7 +3,7 @@
   <groupId>com.ThisIsSporta</groupId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  
+  <artifactId>ThisIsSporta</artifactId> 
   <properties>
   	<spring.version>4.2.5.RELEASE</spring.version>
   	
@@ -68,20 +68,45 @@
     <artifactId>jstl</artifactId>
     <version>1.2</version>
 </dependency>
-  	
-  	<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
+
+<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>4.0.1.Final</version>
 		</dependency>
 		
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
+		    <groupId>org.hibernate.javax.persistence</groupId>
+		    <artifactId>hibernate-jpa-2.0-api</artifactId>
+		    <version>1.0.1.Final</version>
+		</dependency>
+  	
+  	<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version>5.1.0.Final</version>
+</dependency>
+  	
+  	<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <version>1.4.191</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>1.4</version>
+		</dependency>
+  	
+  		 <!-- http://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>1.1</version>
 		</dependency>
   	
   </dependencies>
   
-  <artifactId>ThisIsSporta</artifactId>
+ 
 </project>
