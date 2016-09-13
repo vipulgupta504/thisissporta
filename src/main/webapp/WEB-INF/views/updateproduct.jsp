@@ -70,7 +70,19 @@
                     	<br>
                     	
                     	<form:label path="productCategory">Enter Product Category:</form:label>
-                    	<form:input type="text" path="productCategory" class="form-control"/>
+                    	<form:select path="productCategory" class="form-control">
+                    		
+                    		<c:if test="${not empty AllCategories}">
+                    		<c:forEach var="item" items="${AllCategories}">
+                    			<form:option value="${item.categoryName}" />
+                    		</c:forEach>
+                    		</c:if>
+                    		
+                    		<c:if test="${empty AllCategories}">
+                    		<form:option value="None" />
+                    		</c:if>
+                    		
+                    	</form:select>
                     
                     	<br>
                     	

@@ -1,12 +1,15 @@
 package com.thisissporta;
 
 	
-	import java.util.List;
+import java.util.List;
+
+import javax.validation.Valid;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +20,8 @@ import com.thisissporta.category.Category;
 import com.thisissporta.category.CategoryService;
 import com.thisissporta.product.Product;
 import com.thisissporta.product.ProductService;
+import com.thisissporta.user.User;
+import com.thisissporta.user.UserService;
 
 	@Controller
 	public class SportaController
@@ -27,6 +32,9 @@ import com.thisissporta.product.ProductService;
 		
 		@Autowired
 		ProductService ps;
+		
+		@Autowired
+		UserService us;
 		
 			@RequestMapping("/")
 			public String home() {
@@ -60,8 +68,59 @@ import com.thisissporta.product.ProductService;
 			}
 			
 			@RequestMapping("/signup")
-			public String signup() {
-				return "signup";
+			public ModelAndView signup()
+			{
+				ModelAndView mav = new ModelAndView("signup");
+				
+				mav.addObject("User", new User());
+				
+				return mav;
+			}
+			
+			@RequestMapping("/AddUserToDB")
+			public ModelAndView AddUserToDB( @Valid @ModelAttribute("User") User u , BindingResult bi )
+			{
+				ModelAndView mav = new ModelAndView("signup");
+				
+				if( bi.hasErrors() )
+					mav.addObject("User", u);
+				else
+				{
+					if( !u.getPassword().equals(u.getCPassword()) )
+					{
+						mav.addObject("error", "Password Mismatch");
+						mav.addObject("User", u);
+					}
+					else
+					{
+						List<User> list = us.listAll();
+						
+						boolean check = false;
+						
+						for( User ul : list )
+						{
+							if( ul.getUsername().equals(u.getUsername()) )
+							{
+								check = true;
+								break;
+							}
+						}
+						
+						if( check )
+						{
+							mav.addObject("error", "Username Already Exists");
+							mav.addObject("User", u);
+						}
+						else
+						{
+							us.insert(u);
+							mav.addObject("success", "User Added Succesfully");
+							mav.addObject("User", new User());
+						}
+					}
+				}
+					
+				return mav;
 			}
 			
 			@RequestMapping("/login")
@@ -113,7 +172,20 @@ import com.thisissporta.product.ProductService;
 			@RequestMapping("/DeleteCategoryFromDB/{cid}")
 			public String DeleteCategoryFromDB( @PathVariable("cid") int cid ) {
 				
+				Category c = cs.getCategory(cid);
+				
 				cs.delete(cid);
+				
+				List<Product> list = ps.listAll();
+				
+				for( Product p : list )
+				{
+					if( p.getProductCategory().equals(c.getCategoryName()) )
+					{
+						p.setProductCategory("-");
+						ps.update(p);
+					}
+				}
 				
 				return "redirect:/categories";
 			}
@@ -132,6 +204,19 @@ import com.thisissporta.product.ProductService;
 			
 			@RequestMapping("/UpdateCategoryToDB")
 			public String UpdateCategoryToDB( @ModelAttribute("Category") Category c ) {
+				
+				Category c1 = cs.getCategory(c.getId());
+				
+				List<Product> list = ps.listAll();
+				
+				for( Product p : list )
+				{
+					if( p.getProductCategory().equals(c1.getCategoryName()) )
+					{
+						p.setProductCategory(c.getCategoryName());
+						ps.update(p);
+					}
+				}
 				
 				cs.update(c);
 				
@@ -171,6 +256,8 @@ import com.thisissporta.product.ProductService;
 				
 				mav.addObject("Product", new Product());
 				
+				mav.addObject("AllCategories", cs.getAllCategories());
+				
 				return mav;
 			}
 			
@@ -190,6 +277,7 @@ import com.thisissporta.product.ProductService;
 				Product p = ps.getProduct(pid);
 				
 				mav.addObject("Product", p);
+				mav.addObject("AllCategories", cs.getAllCategories());
 				
 				return mav;
 			}
