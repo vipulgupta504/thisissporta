@@ -10,9 +10,13 @@
 <title>signup</title>
 </head>
 <style>
+form label {
+    font-size: 20px;
+}
+
 body
 {
-   background:url('resources/images/texture7.jpg');  
+   background:url('resources/images/texture12.jpg');  
 }
 input[type=email]:focus {
     border: 3px solid #555;

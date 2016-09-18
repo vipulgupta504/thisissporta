@@ -12,6 +12,7 @@ public interface UserRoleDAO
 	public UserRole getUserRole(int uid);
 	
 	public List<UserRole> listAll();
+	public void generateUserRoles();
 	
 }
 

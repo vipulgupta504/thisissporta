@@ -40,7 +40,12 @@ public class UserRole {
 		RoleName = roleName;
 	}
 	
-	
+
+	public UserRole(String roleName, int role) {
+		super();
+		RoleName = roleName;
+		Role = role;
+	}
 
 	
 }

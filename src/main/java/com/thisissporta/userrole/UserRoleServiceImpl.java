@@ -37,6 +37,10 @@ public class UserRoleServiceImpl implements UserRoleService{
 		return udao.listAll();
 	}
 
-	
+	public void generateUserRoles() {
+
+		udao.generateUserRoles();
+
+	}
 
 }

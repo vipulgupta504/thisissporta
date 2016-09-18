@@ -52,12 +52,32 @@ background-size: cover;
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-        <li><a href="${pageContext.request.contextPath}/signup"><span class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
-      </ul>
+               
+               
+               
+               
+				<c:choose>
+					<c:when test="${not empty pageContext.request.userPrincipal}">
+						<li><a href="${pageContext.request.contextPath}/index">${pageContext.request.userPrincipal.name}</a></li>
+						<li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+
+					</c:when>
+
+					<c:otherwise>
+						<li><a href="${pageContext.request.contextPath}/signup"><span
+								class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="${pageContext.request.contextPath}/loginpage"><span
+								class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					</c:otherwise>
+				</c:choose>
+
+
+			</ul>
     </div>
   </div>
 </nav>
+
+
     
     
     

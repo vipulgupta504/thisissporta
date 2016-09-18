@@ -95,6 +95,20 @@
                     	<form:input type="number" path="productPrice" class="form-control"/>
                     	
                     	<br>
+                    	
+                    	<form:label path="productImage">Enter Product Image:</form:label> 
+                    	<label class="form-control"><span
+							id="file_display1">Choose Image</span><span
+							style="position: relative;"><form:input path="productFile"
+									onchange="changeFileDisplay1();" type="file" 
+									class="form-control" id="imageFile1" /></span></label> <script
+							type="text/javascript">
+										function changeFileDisplay1() {
+											document
+													.getElementById("file_display1").innerHTML = $(
+													'#imageFile1').val();
+											
+										}
                     
                     	<form:input path="id" type="hidden"/>
                     
@@ -112,8 +126,7 @@
 </div>
  </body> 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 </html>
 
-<%@include file="footer.jsp" %>

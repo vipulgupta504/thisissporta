@@ -48,6 +48,42 @@ public class UserRoleDAOImpl implements UserRoleDAO{
 		
 		return list;
 	}
+	
+   @Transactional
+   public void generateUserRoles() {
+		
+		//
+		
+		try
+		{
+			UserRole ur ;//= new UserRole("USER" , 1);
+			
+			ur = this.getUserRole(1);
+			
+			if( ur == null )
+			{
+				ur = new UserRole("USER" , 1);
+				
+				this.insert(ur);
+			}
+			
+			ur = this.getUserRole(2);
+			
+			if( ur == null )
+			{
+				ur = new UserRole("ADMIN" , 2);
+				
+				this.insert(ur);
+			}
+		}
+		catch( Exception e )
+		{
+			e.printStackTrace();
+		}
+		
+		//
+		
+			}
 		
 
 }

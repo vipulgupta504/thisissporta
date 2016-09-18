@@ -27,7 +27,7 @@
                 <div class="box-content">
                     <p class="description">
                     
-                    <form:form method="POST" action="AddProductToDB" modelAttribute="Product">
+                    <form:form method="POST" action="AddProductToDB" modelAttribute="Product" enctype="multipart/form-data">
                     
                     	<form:label path="productName">Enter Product Name:</form:label>
                     	<form:input type="text" path="productName" class="form-control"/>
@@ -64,7 +64,20 @@
                     	
                     	<br>
                     	
-                    	<%-- <form:label path="productImage">Enter Product Image:</form:label> --%>
+                    	<form:label path="productImage">Enter Product Image:</form:label> 
+                    	<label class="form-control"><span
+							id="file_display1">Choose Image</span><span
+							style="position: relative;"><form:input path="productFile"
+									onchange="changeFileDisplay1();" type="file" 
+									class="form-control" id="imageFile1" /></span></label> <script
+							type="text/javascript">
+										function changeFileDisplay1() {
+											document
+													.getElementById("file_display1").innerHTML = $(
+													'#imageFile1').val();
+											;
+										}
+									</script>
                     	
                     	
                     	<input type="submit" class="btn btn-success" value="Add Product"/>
