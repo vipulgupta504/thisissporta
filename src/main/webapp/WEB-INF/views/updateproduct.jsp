@@ -51,18 +51,17 @@
 <body>
 
 <c:import url="/head"/>
-<br>
 
 <div class="container">
     <div class="box">
         <div class="col-md-12 col-sm-6">
-            <div class="axe">
+            
                 
                 <h2 class="title"><b>Update Product</b></h2>
                 <div class="box-content">
                     <p class="description">
                     
-                    <form:form method="POST" action="${pageContext.request.contextPath}/UpdateProductToDB" modelAttribute="Product">
+                    <form:form method="POST" action="${pageContext.request.contextPath}/UpdateProductToDB" modelAttribute="Product" enctype="multipart/form-data">>
                     
                     	<form:label path="productName">Enter Product Name:</form:label>
                     	<form:input type="text" path="productName" class="form-control"/>
@@ -97,28 +96,30 @@
                     	<br>
                     	
                     	<form:label path="productImage">Enter Product Image:</form:label> 
-                    	<label class="form-control"><span
-							id="file_display1">Choose Image</span><span
-							style="position: relative;"><form:input path="productFile"
-									onchange="changeFileDisplay1();" type="file" 
-									class="form-control" id="imageFile1" /></span></label> <script
-							type="text/javascript">
-										function changeFileDisplay1() {
-											document
-													.getElementById("file_display1").innerHTML = $(
-													'#imageFile1').val();
+                    	<label class="form-control">
+                    	<span id="file_display1">Choose Image</span>
+                        <span style="position: relative;">
+                        <form:input path="productFile" onchange="changeFileDisplay1();" type="file" 
+									class="form-control" id="imageFile1" />
+						</span>
+						</label> 
+						<script	type="text/javascript">
+							function changeFileDisplay1()
+							{
+										document.getElementById("file_display1").innerHTML = $('#imageFile1').val();
 											
-										}
+							}
+							</script>
                     
-                    	<form:input path="id" type="hidden"/>
-                    
-                    	<br>
+                    	<form:input path="id" type="hidden"/> 
+                  <br>
+                                  	
                     	<input type="submit" class="btn btn-success" value="Update"/>
                     
                     </form:form>
                     
                     </p>  
-                </div>
+                
             </div>
         </div>
         

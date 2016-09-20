@@ -304,7 +304,7 @@ import com.thisissporta.userrole.UserRoleService;
 						if (!directory.exists())
 							directory.mkdirs();
 						
-						/* create file on server */
+						/* create file on server if not present already*/
 						
 						file = new File(directory.getAbsolutePath() + System.getProperty("file.separator") + "image_"
 								+ p1.getId() + ".jpg");
@@ -350,7 +350,7 @@ import com.thisissporta.userrole.UserRoleService;
 
 					File directory = null;
 
-					// System.out.println(ps.getProductWithMaxId());
+					
 
 					if (p.getProductFile().getContentType().contains("image")) {
 						directory = new File(path + "\\resources\\images");
@@ -381,7 +381,6 @@ import com.thisissporta.userrole.UserRoleService;
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				ps.update(p);
 				
 				return "redirect:/products";
 			}
