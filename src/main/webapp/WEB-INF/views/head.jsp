@@ -4,10 +4,13 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/references/js/angular.min.js"></script>
+<c:import url="head-meta.jsp"/>
+</head>
+
 <title>this is sporta</title>
+
 <style>
 h1{font-family:"Comic Sans MS";}
 .navbar {
@@ -22,7 +25,8 @@ background-size: cover;
     }
     
  </style>
-    <body>
+ 
+<body>
     
 <div class="jumbotron">
  <div class="container text-center">
@@ -49,6 +53,8 @@ background-size: cover;
         <li><a href="${pageContext.request.contextPath}/products">Products</a></li>
         <li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
         <li><a href="${pageContext.request.contextPath}/categories">Categories</a></li>
+        <li><a href="${pageContext.request.contextPath}/initiateflow">Cart</a></li>
+        
         
       </ul>
       <ul class="nav navbar-nav navbar-right">

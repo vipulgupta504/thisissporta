@@ -6,7 +6,7 @@
 <html>
 <head>
 <c:import url="/head-meta"/>
-
+</head>
 
 <style>
 p{font-size:20px;
@@ -44,7 +44,7 @@ table tr:nth-child(even) {
   background-color: #ffffff;
 }
 </style>
-</head>
+
 <script type="text/javascript">
 {
 	

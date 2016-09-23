@@ -61,7 +61,7 @@
                 <div class="box-content">
                     <p class="description">
                     
-                    <form:form method="POST" action="${pageContext.request.contextPath}/UpdateProductToDB" modelAttribute="Product" enctype="multipart/form-data">>
+                    <form:form method="POST" action="${pageContext.request.contextPath}/UpdateProductToDB" modelAttribute="Product" enctype="multipart/form-data">
                     
                     	<form:label path="productName">Enter Product Name:</form:label>
                     	<form:input type="text" path="productName" class="form-control"/>
@@ -99,7 +99,7 @@
                     	<label class="form-control">
                     	<span id="file_display1">Choose Image</span>
                         <span style="position: relative;">
-                        <form:input path="productFile" onchange="changeFileDisplay1();" type="file" 
+                        <form:input path="productFile" onchange="changeFileDisplay1();" type="file" style="opacity:0;"
 									class="form-control" id="imageFile1" />
 						</span>
 						</label> 

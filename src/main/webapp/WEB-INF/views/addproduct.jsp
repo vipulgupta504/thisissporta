@@ -68,7 +68,7 @@
                     	<label class="form-control"><span
 							id="file_display1">Choose Image</span><span
 							style="position: relative;"><form:input path="productFile"
-									onchange="changeFileDisplay1();" type="file" 
+									onchange="changeFileDisplay1();" type="file" style="opacity:0;"
 									class="form-control" id="imageFile1" /></span></label> <script
 							type="text/javascript">
 										function changeFileDisplay1() {
@@ -78,7 +78,7 @@
 											;
 										}
 									</script>
-                    	
+                    	<br>
                     	
                     	<input type="submit" class="btn btn-success" value="Add Product"/>
                     

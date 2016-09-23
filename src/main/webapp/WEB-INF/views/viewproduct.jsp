@@ -7,102 +7,122 @@
 <html>
 <head>
 
-<c:import url="/head-meta"/>
+<c:import url="head-meta.jsp"/>
+
+</head>
 
 <style>
+.view-container
+{ border-style: solid;
+    border-color: lightblue;
+}
   body
 {
-   background:url('resources/images/texture9.jpg');
+   background-image: url("${pageContext.request.contextPath}/resources/images/texture9.jpg");
 }
-.box{
-	width: 100%;
-	height: 100%;
-    position: relative;
-    text-align: center;
+
+@font-face {
+    font-family: MyCorbert;
+    src: url("${pageContext.request.contextPath}/resources/references/fonts/Corbert-Regular-webfont.woff2");
 }
-.box .title{
-    width: 100%;
-    padding: 12px 10px;
-    margin: 0;
-    position: absolute;
-    top: 35%;
-    left: 0;
-    font-size: 24px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 5;
-    transition: all 0.5s ease 0s;
+
+.corbert-class
+{
+	font-family: MyCorbert;
+	color:red;
 }
- .box .box-content{
-    width: 100%;
-    padding: 100px 10px;
-    margin: 0;
-    position: absolute;
-    top: 65%;
-    left: 0;
-    font-size: 20px;
-    color: #fff;
-    background-color: lightblue;
-    z-index: 1;
-    transition: all 0.5s ease 0s;
+
+.row-bottom
+{
+	border-bottom: 1px solid #AAAAAA;
 }
+
 </style>
-</head>
 <body>
 
-<c:import url="/head"/>
+<c:import url="head.jsp"/>
 <br>
 
-<div class="container">
-    <div class="box">
-        <div class="col-md-12 col-sm-6">
-            <div class="axe">
-                
-                <h2 class="title"><b>View Product</b></h2>
-                <div class="box-content">
-                    <p class="description">
-                    
-                    <form:form method="POST" action="${pageContext.request.contextPath}/UpdateProductToDB" modelAttribute="Product">
-                    
-                    	<form:label path="productName">Product Name:</form:label>
-                    	<label>${Product.productName}</label>
-                    	
-                    	<br>
-                    	
-                    	<form:label path="productCategory"> Product Category:</form:label>
-                    	<label>${Product.productCategory}</label>
-                    
-                    	<br>
-                    	
-                    	<form:label path="productDescription"> Product Description:</form:label>
-                    	<label>${Product.productDescription}</label>
-                    	
-                    	<br>
-                    	
-                    	<form:label path="productPrice">Product Price:</form:label>
-                    	<label>${Product.productPrice}</label>
-                    	
-                    	
-                    	<br>
-                    
-                    	<form:input path="id" type="hidden"/>
-                    
-                    	<br>
-                    	<!-- <input type="submit" class="btn btn-success" value="Update"/> -->
-                    
-                    </form:form>
-                    
-                    </p>  
-                </div>
-            </div>
-        </div>
-        
-    </div>  
+<div align="right">
+<a href="addtocart"><button type="button" class="btn btn-primary btn-lg" 
+ 	style="position: absolute;right: 80px;">Add to Cart</button></a>
 </div>
- </body> 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+<br>
+<br>
+
+	<form:form method="POST" action="${pageContext.request.contextPath}/UpdateProductToDB" modelAttribute="Product">
+
+	<div class="container view-container" style="background-color: rgba(255,255,255,0.8);">
+		<div class="row row-bottom">
+		
+			<div class="col-lg-6">
+				<form:label path="productName" class="corbert-class">Product Name:</form:label>
+			</div>
+			
+			<div class="col-lg-6">
+				<label class="corbert-class"> ${Product.productName}</label>
+			</div>
+		</div>
+		<div class="row row-bottom">
+			
+			<div class="col-lg-6">
+				<form:label path="productCategory" class="corbert-class">Product Category:</form:label>
+			</div>
+			
+			<div class="col-lg-6">
+				<label class="corbert-class"> ${Product.productCategory}</label>
+			</div>
+		</div>
+		
+		<div class="row row-bottom">
+			
+			<div class="col-lg-6">
+				<form:label path="productDescription" class="corbert-class">Product Description:</form:label>
+			</div>
+			
+			<div class="col-lg-6">
+				<label class="corbert-class">${Product.productDescription}</label>
+			</div>
+		</div>
+		
+		
+		<div class="row row-bottom">
+			
+			<div class="col-lg-6">
+				<form:label path="productPrice" class="corbert-class">Product Price:</form:label>
+			</div>
+			
+			<div class="col-lg-6">
+				<label class="corbert-class">${Product.productPrice}</label>
+			</div>
+		</div>
+		
+		<div class="row row-bottom">
+			
+			<div class="col-lg-6">
+				<form:label path="productImage" class="corbert-class">Product Image:</form:label>
+			</div>
+			
+			<div class="col-lg-6">
+				<label><img src="${pageContext.request.contextPath}/${Product.productImage}" class="img img-thumbnail"></label>
+			</div>
+		</div>		   
+		
+		<form:input path="id" type="hidden"/>
+            
+		
+		
+	</div>
+
+	</form:form>
+
+<br>
+    <br>
+    <br>
+<br>
+ </body> 
 
 </html>
 
-<%@include file="footer.jsp" %>

@@ -26,6 +26,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.method.annotation.ModelAndViewMethodReturnValueHandler;
 
+import com.thisissporta.cart.Cart;
+import com.thisissporta.cart.CartService;
 import com.thisissporta.category.Category;
 import com.thisissporta.category.CategoryService;
 import com.thisissporta.product.Product;
@@ -52,6 +54,9 @@ import com.thisissporta.userrole.UserRoleService;
 		
 		@Autowired
 		ServletContext context;
+		
+		@Autowired
+		CartService css;
 		
 			@RequestMapping("/")
 			public String home() {
@@ -426,6 +431,59 @@ import com.thisissporta.userrole.UserRoleService;
 
 				return "index";
 			}
-
+				
+			@RequestMapping(value="/page1")	
+			public String page1()
+			{	
+				return "flows/page1";
+			}
+			
+			@RequestMapping(value="/page2")	
+			public String page2()
+			{	
+				return "flows/page2";
+			}
+			
+			@RequestMapping(value="/page3")	
+			public String page3()
+			{	
+				return "flows/page3";
+			}
+			
+			@RequestMapping(value="/page4")	
+			public String page4()
+			{	
+				return "flows/page4";
+			}
+			
+			 @RequestMapping(value="/initiateflow" , method = RequestMethod.GET)
+				public String redirect(HttpServletRequest request){
+					
+					String retval = "";
+					
+					if( request.getUserPrincipal() == null )
+						retval = "redirect:/cart?user=none";
+					else
+						retval = "redirect:/cart?user="+request.getUserPrincipal().getName();
+						
+					return retval;
+				}
+			
+			 public String test()
+				{
+					Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+				    if (auth != null && !auth.getName().equals("anonymousUser"))
+				    {    
+				    	System.out.println(auth.getName());
+				    	//System.out.println("User present");
+				    	return "false";
+				    }
+				    else
+				    {
+				    	System.out.println("User not present");
+				    	return "true";
+				    }
+				}
+			 
 		}
 
