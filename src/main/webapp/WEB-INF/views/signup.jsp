@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<c:import url="head-meta.jsp" />
+<c:import url="/head-meta" />
 <title>signup</title>
 </head>
 <style>
@@ -14,10 +14,6 @@ form label {
     font-size: 20px;
 }
 
-body
-{
-   background:url('resources/images/texture12.jpg');  
-}
 input[type=email]:focus {
     border: 3px solid #555;
 } 

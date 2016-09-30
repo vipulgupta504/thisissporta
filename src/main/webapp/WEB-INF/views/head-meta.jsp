@@ -1,7 +1,7 @@
 
 <%@page isELIgnored="false" %>
   
-  <title>This is Sporta</title>
+  <title>This Is Sporta</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
  <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/sharp-trojan-16-220012.png" />
   

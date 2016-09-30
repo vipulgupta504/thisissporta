@@ -79,7 +79,6 @@ import com.thisissporta.userrole.UserRoleService;
 				return "index";
 			}
 			
-			
 			@RequestMapping("/aboutus")
 			public String abt() {
 				return "aboutus";
@@ -390,6 +389,46 @@ import com.thisissporta.userrole.UserRoleService;
 				return "redirect:/products";
 			}
 			
+			@RequestMapping(value = "/addtocart")
+			public String addToCart(HttpServletRequest request) {
+
+				Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+				if (auth != null && !auth.getName().equals("anonymousUser")) {
+					System.out.println(request.getParameter("pid"));
+					System.out.println(request.getParameter("pqty"));
+
+					int qty = 1;
+
+					try {
+						qty = Integer.parseInt(request.getParameter("pqty"));
+
+						if (!(qty >= 1 && qty <= 10))
+							throw new Exception();
+					} catch (Exception e) {
+						System.out.println("Invalid Qty");
+					}
+
+					Cart c = new Cart();
+
+					c.setProductID(request.getParameter("pid"));
+					c.setQty("" + qty);
+
+					Product p = ps.getProduct(Integer.parseInt(request.getParameter("pid")));
+
+					c.setName(p.getProductName());
+					c.setPrice(p.getProductPrice());
+
+					c.setUserName(auth.getName());
+
+					css.add(c);
+
+				}
+
+				return "redirect:initiateflow";
+
+			}
+			
+			
 			@RequestMapping("/DeleteProductFromDB/{pid}")
 			public String DeleteProductFromDB( @PathVariable("pid") int pid ) {
 				
@@ -406,7 +445,6 @@ import com.thisissporta.userrole.UserRoleService;
                 mav.addObject("Product", ps.getProduct(pid));
 				
 				return mav;
-								
 			}
 			
 			
@@ -433,9 +471,48 @@ import com.thisissporta.userrole.UserRoleService;
 			}
 				
 			@RequestMapping(value="/page1")	
-			public String page1()
-			{	
-				return "flows/page1";
+			public ModelAndView page1()
+			{
+				ModelAndView mav = new ModelAndView( "flows/page1" );
+				
+				List<Cart> list = css.getAllProducts();
+				
+				JSONArray jarr = new JSONArray();
+				
+				String user = "";
+				
+				Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			    if (auth != null && !auth.getName().equals("anonymousUser"))
+			    {    
+			    	user = auth.getName();
+			    }
+				
+				for( Cart item:list )
+				{
+					
+					if( item.getUserID().equals(user) )
+					{
+						JSONObject jobj = new JSONObject();
+						
+						jobj.put("ProductID", item.getProductID() );
+						jobj.put("ProductName", item.getName() );
+						jobj.put("ProductPrice", item.getPrice() );
+						
+						Product p = ps.getProduct( Integer.parseInt(item.getProductID()) );
+						
+						jobj.put("ProductImage", p.getProductImage());
+						jobj.put("ProductQty", item.getQty());
+						 
+						jarr.add(jobj);
+					}
+					
+				 }
+				 
+				System.out.println(jarr);
+				
+				mav.addObject("data", jarr.toJSONString());
+				
+				return mav;
 			}
 			
 			@RequestMapping(value="/page2")	
@@ -457,7 +534,8 @@ import com.thisissporta.userrole.UserRoleService;
 			}
 			
 			 @RequestMapping(value="/initiateflow" , method = RequestMethod.GET)
-				public String redirect(HttpServletRequest request){
+				public String redirect(HttpServletRequest request)
+			 {
 					
 					String retval = "";
 					

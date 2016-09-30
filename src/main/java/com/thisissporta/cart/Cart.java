@@ -23,6 +23,12 @@ public class Cart implements Serializable
 	private String ProductID;
 	private String UserName;
 	
+	public String getUserName() {
+		return UserName;
+	}
+	public void setUserName(String userName) {
+		UserName = userName;
+	}
 	public String getBillingAddress() {
 		return BillingAddress;
 	}

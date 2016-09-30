@@ -6,6 +6,7 @@
 <head>
 <link rel="shortcut icon" href="favicon.ico" />
 <c:import url="/head-meta"/>
+</head>
 
 <style>
   .carousel-inner > .item > img,
@@ -20,11 +21,10 @@
 } 
 
 </style>
-</head>
+
 <body>
 
-<c:import url="/head" />
-    
+<c:import url="/head"/>
     
 <div class="container">
   <br>

@@ -96,6 +96,7 @@
                     		<a href="updatecategory/{{x.CategoryId}}" class="btn btn-danger">Update</a>
                     		
                     		<a href="DeleteCategoryFromDB/{{x.CategoryId}}" class="btn btn-info">Delete</a>
+                    		
                     	</div>
                     
                     </div>

@@ -47,4 +47,9 @@ public class UserRole {
 		Role = role;
 	}
 	
+	public UserRole()
+	{
+		
+	}
+	
 }

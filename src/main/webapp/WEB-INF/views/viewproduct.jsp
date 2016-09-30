@@ -44,21 +44,24 @@
 <br>
 
 <div align="right">
-<a href="addtocart"><button type="button" class="btn btn-primary btn-lg" 
- 	style="position: absolute;right: 80px;">Add to Cart</button></a>
+
+<form action="${pageContext.request.contextPath}/addtocart" method="post">
+<input type="hidden" value="${Product.id}" name="pid" />
+<label>Enter quantity:</label>&nbsp;<input type="number" value="1 " min="1" max="10" name="pqty" class="form form-input" />
+<input type="submit" value="Add To Cart" class="btn btn lg btn-primary" />
+</form>
+
 </div>
 
 <br>
 <br>
 <br>
 
-	<form:form method="POST" action="${pageContext.request.contextPath}/UpdateProductToDB" modelAttribute="Product">
-
-	<div class="container view-container" style="background-color: rgba(255,255,255,0.8);">
+		<div class="container view-container" style="background-color: rgba(255,255,255,0.8);">
 		<div class="row row-bottom">
 		
 			<div class="col-lg-6">
-				<form:label path="productName" class="corbert-class">Product Name:</form:label>
+				<label path="productName" class="corbert-class" >Product Name:</label>
 			</div>
 			
 			<div class="col-lg-6">
@@ -68,7 +71,7 @@
 		<div class="row row-bottom">
 			
 			<div class="col-lg-6">
-				<form:label path="productCategory" class="corbert-class">Product Category:</form:label>
+				<label path="productCategory" class="corbert-class">Product Category:</label>
 			</div>
 			
 			<div class="col-lg-6">
@@ -79,7 +82,7 @@
 		<div class="row row-bottom">
 			
 			<div class="col-lg-6">
-				<form:label path="productDescription" class="corbert-class">Product Description:</form:label>
+				<label path="productDescription" class="corbert-class">Product Description:</label>
 			</div>
 			
 			<div class="col-lg-6">
@@ -91,7 +94,7 @@
 		<div class="row row-bottom">
 			
 			<div class="col-lg-6">
-				<form:label path="productPrice" class="corbert-class">Product Price:</form:label>
+				<label path="productPrice" class="corbert-class">Product Price:</label>
 			</div>
 			
 			<div class="col-lg-6">
@@ -102,7 +105,7 @@
 		<div class="row row-bottom">
 			
 			<div class="col-lg-6">
-				<form:label path="productImage" class="corbert-class">Product Image:</form:label>
+				<label path="productImage" class="corbert-class">Product Image:</label>
 			</div>
 			
 			<div class="col-lg-6">
@@ -110,19 +113,16 @@
 			</div>
 		</div>		   
 		
-		<form:input path="id" type="hidden"/>
+		<input path="id" type="hidden"/>
             
 		
 		
 	</div>
 
-	</form:form>
-
+	<br>
 <br>
-    <br>
-    <br>
+<br>
 <br>
  </body> 
-
 </html>
 
