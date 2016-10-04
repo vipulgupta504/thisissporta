@@ -38,23 +38,27 @@
 
     <div class="carousel-inner" role="listbox">
       <div class="item active">
+      <a href="${pageContext.request.contextPath}/products?item=yonex+racquet">
         <img src="resources/images/dunlop.jpg" alt="racquet" width="100" height="60"> 
-        
+        </a>
       </div> 
 
       <div class="item">
+       <a href="${pageContext.request.contextPath}/products?item=nike+football">
         <img src="resources/images/download23.jpg" alt="football" width="100" height="60">
-        
+        </a>
       </div>
     
       <div class="item">
+       <a href="${pageContext.request.contextPath}/products?item=gm+bat">
         <img src="resources/images/download21.jpg" alt="cricket bat" width="100" height="60">
-        
+        </a>
       </div>
 
       <div class="item">
+       <a href="${pageContext.request.contextPath}/products?item=grays+hockey+stick">
         <img src="resources/images/image.jpg" alt="hockey stick" width="100" height="60">
-        
+        </a>
       </div>
     </div>
 
@@ -75,24 +79,29 @@
 
 <div class="container">
   <div class="row">
+  <a href="${pageContext.request.contextPath}/products?item=kookaburra+bat">
     <div class="col-sm-4">
       <div class="panel panel-primary">
-        <div class="panel-heading">KOOKABURRA BATS</div>
+        <div class="panel-heading" align="center" >KOOKABURRA BATS</div>
         <div class="panel-body"><img src="resources/images/download16.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
         <div class="panel-footer">The iconic Kahuna has been the spearhead of the Kookaburra range for the last 12 years. Its powerful profile, big edges and renowned graphics make it ideal for the stroke maker who likes to take control and lead by example.</div>
+      
       </div>
     </div>
+    
     <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">ADIDAS FOOTBALL</div>
+      <div class="panel panel-danger">
+      
+        <div class="panel-heading" align="center">ADIDAS FOOTBALL</div>
         <div class="panel-body"><img src="resources/images/download4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
         <div class="panel-footer">This new product by nike wont make you leave the field and remains durable for a long time. So play on!</div>
+      
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">YONEX RACQUET</div>
-        <div class="panel-body"><img src="resources/images/download20.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+      <div class="panel panel-success">
+        <div class="panel-heading" align="center">YONEX RACQUET</div>
+        <div class="panel-body"><img src="resources/images/download6.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
         <div class="panel-footer">All badminton players have a reason to rejoice now with this new racquet from Yonex. Designed with the latest technology and equipments, this wont be damaged easily.</div>
       </div>
     </div>

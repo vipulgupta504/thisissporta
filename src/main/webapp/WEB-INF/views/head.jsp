@@ -7,7 +7,10 @@
 
 <style>
 
-h1{font-family:"Comic Sans MS";}
+h1
+{
+font-family:"Comic Sans MS";
+}
 .navbar {
       margin-bottom: 50px;
       border-radius: 0;
@@ -47,7 +50,14 @@ h1{font-family:"Comic Sans MS";}
         <li><a href="${pageContext.request.contextPath}/aboutus">About Us</a></li>
         <li><a href="${pageContext.request.contextPath}/products">Products</a></li>
         <li><a href="${pageContext.request.contextPath}/contactus">Contact Us</a></li>
+        <%
+						if (request.isUserInRole("ADMIN"))
+						{
+							%>
         <li><a href="${pageContext.request.contextPath}/categories">Categories</a></li>
+        <%							
+						}
+						%>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -59,8 +69,16 @@ h1{font-family:"Comic Sans MS";}
 					<c:when test="${not empty pageContext.request.userPrincipal}">
 						<li><a href="${pageContext.request.contextPath}/index">${pageContext.request.userPrincipal.name}</a></li>
 						<li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+						<%
+						 if (!request.isUserInRole("ADMIN"))
+ {
+ 	%>
 						<li><a href="${pageContext.request.contextPath}/initiateflow"><span
 								class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+								<%
+ }
+ 	%>
+								
 
 					</c:when>
 
@@ -69,8 +87,11 @@ h1{font-family:"Comic Sans MS";}
 								class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 						<li><a href="${pageContext.request.contextPath}/loginpage"><span
 								class="glyphicon glyphicon-log-in"></span> Login</a></li>
+								
+						
 						<li><a href="${pageContext.request.contextPath}/initiateflow"><span
 								class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+								
 					</c:otherwise>
 				</c:choose>
 

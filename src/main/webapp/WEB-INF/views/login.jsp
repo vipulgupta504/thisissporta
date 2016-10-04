@@ -13,6 +13,11 @@
 <c:import url="head-meta.jsp" />
 <title>login</title>
 </head>
+<style>
+legend{
+font-family: "Georgia";
+}
+</style>
 <body>
 
 <c:import url="/head" />

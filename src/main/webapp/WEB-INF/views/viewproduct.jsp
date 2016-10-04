@@ -45,10 +45,21 @@
 
 <div align="right">
 
+
 <form action="${pageContext.request.contextPath}/addtocart" method="post">
 <input type="hidden" value="${Product.id}" name="pid" />
+<%
+ if (!request.isUserInRole("ADMIN"))
+ {
+ 	%>
+
 <label>Enter quantity:</label>&nbsp;<input type="number" value="1 " min="1" max="10" name="pqty" class="form form-input" />
 <input type="submit" value="Add To Cart" class="btn btn lg btn-primary" />
+<%
+ }
+ 	%>
+
+
 </form>
 
 </div>

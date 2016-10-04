@@ -57,7 +57,7 @@
 <div class="container">
     <div class="box">
         <div class="col-md-12 col-sm-6">
-            <div class="axe">
+            
                 
                 <h2 class="title"><b>ABOUT US</b></h2>
                 <div class="box-content">
@@ -65,7 +65,7 @@
                     Imagine your favourite sports items all under one place! ThisIsSporta is a web portal designed exclusively for all sports items-be it football,cricket or sports shoes,this site will help in serving all your desires. This is first-of-its-kind sports web portal which has been launched in India. We at THISISSPORTA offer latest products at reasonable prices. We deal in various sporting brand majors such as adidas,nike and many others. Also you can be assured of safe payment gateway and free home delivery of your desired products within the stipulated time.So dont wait and switch to the products tab and start shopping!!
                     
                       </p>  
-                </div>
+                
             </div>
         </div>
         

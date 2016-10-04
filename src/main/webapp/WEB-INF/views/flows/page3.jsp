@@ -100,7 +100,7 @@
 
 			<div>
 				<label>SHIPPING ADDRESS</label><br> 
-				<textarea rows="5" placeholder="SHIPPING ADDRESS" ng-disabled="true"
+				<textarea rows="4" placeholder="Shipping address" ng-disabled="true"
 					class="form-control" style="resize: none;"
 					ng-model="shippingAddress"></textarea>
 			</div>
@@ -110,33 +110,25 @@
 
 			<div>
 				<label>BILLING ADDRESS</label><br> 
-				<textarea rows="5" placeholder="BILLING ADDRESS" ng-disabled="true"
+				<textarea rows="4" placeholder="Billing address" ng-disabled="true"
 					class="form-control" style="resize: none;"
 					ng-model="billingAddress"></textarea>
 			</div>
 
 <br>
-<br>
 
-			<label>TOTAL PRICE</label><br>
-			<textarea rows="1" class="form-control"
-				style="resize: none; font-family: verdana; font-size: 20px"
-				ng-model="TotalPrice" ng-disabled="true"></textarea>
-
-			<br> <br>
-
-		</div>
+	</div>
 	</div>
 	<br><br>
 
-	<div ng-repeat="x in data" style="background-color: rgba(255, 255, 255, 0.7);">
+	<div ng-repeat="x in data" style="background-color: rgba(255, 255, 255, 0.9);">
 
 		
 		<div class="container">
-	<div class="table">
+		<div class="table">
 		<div class="row">
 		
-<div class="col-md-6">
+			<div class="col-md-6">
 					<div style="margin: auto; width: 45%;">
 						<img src="${pageContext.request.contextPath}/{{x.ProductImage}}"
 							width="100%" class="img img-responsive img-rounded"></img>
@@ -166,10 +158,20 @@
 			
 			
 		</table>
+		
+		
+		
+		
 		</div>
 		</div>
 		</div>
 </div>
+<br>
+<br>
+<label>GRAND TOTAL</label><br>
+			<textarea rows="1" class="form-control"
+				style="resize: none; font-family: verdana; font-size: 30px"
+				ng-model="TotalPrice" ng-disabled="true"></textarea>
 
 </body>
 </html>

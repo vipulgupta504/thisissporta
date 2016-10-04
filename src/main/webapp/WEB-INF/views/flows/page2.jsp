@@ -88,13 +88,16 @@
 <div class="pge2" align="center">
 	
 	<div>
-	<label>Shipping address</label><br><br>
-	<textarea rows="5" placeholder="SHIPPING ADDRESS" class="form-control" style="resize: none;" ng-model="shippingAddress"></textarea>
+	<label>SHIPPING ADDRESS</label><br><br>
+	<textarea rows="4" placeholder="Shipping address" class="form-control" style="resize: none;" ng-model="shippingAddress"></textarea>
 	</div>
 	
+	<br>
+	<br>
+	
 	<div>
-	<label>Billing address</label><br><br>
-	<textarea rows="5" placeholder="BILLING ADDRESS" class="form-control" style="resize: none;" ng-model="billingAddress"></textarea>
+	<label>BILLING ADDRESS</label><br><br>
+	<textarea rows="4" placeholder="Billing address" class="form-control" style="resize: none;" ng-model="billingAddress"></textarea>
 	</div>
 	<br><br>
 	<div><input type="button" value="Update" class="btn btn-success" ng-click="UpdateAddresses()" ng-disabled="shippingAddress=='' || billingAddress==''"></div>

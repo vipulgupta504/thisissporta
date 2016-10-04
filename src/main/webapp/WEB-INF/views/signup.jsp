@@ -10,6 +10,13 @@
 <title>signup</title>
 </head>
 <style>
+legend{
+ color:black;
+ font-size:45px;
+ font-weight:bold;
+ font-family: "Georgia";
+}
+
 form label {
     font-size: 20px;
 }
@@ -31,8 +38,12 @@ input[type=number]:focus {
 
 <c:import url="/head" />
 
+<br>
+<br>
+
+
+
 <div class="container">
-  <h1>Sign Up</h1>
   
   <!--  -->
   	<c:if test="${not empty success }">
@@ -50,6 +61,10 @@ input[type=number]:focus {
 	</c:if>
   <!--  -->
   
+  <legend style="color:red;">SIGN UP</legend>
+  
+  <br>
+  <br>
   <form:form class="form-horizontal" modelAttribute="User" action="AddUserToDB" method="post">
   
    <div class="form-group">

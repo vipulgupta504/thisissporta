@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<c:import url="head-meta.jsp"></c:import>
  <style>
 body
 {
@@ -18,6 +19,16 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -62,20 +73,31 @@ background-image: linear-gradient(to bottom, lightblue 0%, 	lightblue 100%);
  <div class="container" id="wrap">
   <div class="row">
         <div class="col-md-6 col-md-offset-3">
-  			<form>
-    			<label for="fname">First Name</label>
-    				<input type="text" id="fname" name="firstname">
-
-					 <label for="lname">Last Name</label>
-    				 <input type="text" id="lname" name="lastname">
-
-    				 <label for="country">State</label>
-    				 <select id="country" name="country">
-      					<option value="australia">Australia</option>
-      					<option value="canada">Canada</option>
-      					<option value="usa">USA</option>
-    				</select>
-  
+  			
+  			
+  			<form action="emailconfrm" method="post">
+    			<br>
+    			<label for="email"> Email Address</label>
+				 <input type="email" class="form-control" name="email" id="email"
+										placeholder="Enter email" required="required" />
+										
+				<br>
+    			
+    			<label for="subject"> Subject</label> <select id="subject"
+				name="subject" class="form-control" required="required">
+				<option value="service">General Customer Service</option>
+				<option value="product">Product Support</option>
+				</select>
+				
+				<br>
+								
+				<label for="name"> Message</label>
+				<textarea name="message" id="message" class="form-control"
+				rows="5" cols="25" required="required" placeholder="Message"></textarea>
+				
+				<br>
+				
+					 
     <input type="submit" value="Submit">
   </form>
 

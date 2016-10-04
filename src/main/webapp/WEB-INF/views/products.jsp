@@ -1,3 +1,5 @@
+<%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
+<%@page import="org.springframework.security.core.Authentication"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -61,6 +63,8 @@ table tr:nth-child(even) {
 	    {"ProductID":"6","ProductName":"Nike Football","ProductPrice":"1000","ProductImage":"resources/images/download15.jpg"}] */
 	    
 	    $scope.data = ${Products}; 
+	    
+	    $scope.search = '${param.item}';
 });
 }
 	
@@ -70,8 +74,17 @@ table tr:nth-child(even) {
 
 <br>
 <div align="right">
+							<%
+						if (request.isUserInRole("ADMIN"))
+						{
+							%>
+
 <a href="addproduct"><button type="button" class="btn btn-success" 
  	style="position: absolute;right: 80px;">Add Product</button></a>
+ 						<%							
+						}
+						%>
+ 	
 </div>
 
 <form>
@@ -83,10 +96,11 @@ table tr:nth-child(even) {
  
  
 <div align="center">
+
 			<div class="row" ng-repeat="x in data|filter:search">
-			
+			<br>
+			<br>
     			     
- 
  					<div class="col-sm-2" >
  					<p style="color:black;"><b>{{x.ProductName}}</b></p>
  					</div>
@@ -106,6 +120,11 @@ table tr:nth-child(even) {
 					<div class="col-sm-2" >
 						<a href="${pageContext.request.contextPath}/viewproduct/{{x.ProductId}}" class="btn btn-info">View Product</a>
 					</div>
+					<%
+						if (request.isUserInRole("ADMIN"))
+						{
+							%>
+					
 					
 					<div class="col-sm-2" >
 						<a href="${pageContext.request.contextPath}/updateproduct/{{x.ProductId}}" class="btn btn-warning">Update Product</a>
@@ -114,6 +133,10 @@ table tr:nth-child(even) {
 					<div class="col-sm-2" >
 						<a href="${pageContext.request.contextPath}/DeleteProductFromDB/{{x.ProductId}}" class="btn btn-danger">Delete Product</a>
 					</div>
+					<%							
+						}
+						%>
+
 
  			</div>
 </div>		

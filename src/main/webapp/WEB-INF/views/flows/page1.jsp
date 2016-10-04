@@ -99,7 +99,7 @@
 <br>
 <div class="container">
 			<div ng-repeat="x in data"
-		style="background-color: rgba(255, 255, 255, 0.7);">
+		style="background-color: rgba(255, 255, 255, 0.9);">
 
 		<table class="table" align="center">
 

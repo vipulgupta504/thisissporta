@@ -14,6 +14,8 @@ import javax.validation.Valid;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -57,6 +59,9 @@ import com.thisissporta.userrole.UserRoleService;
 		
 		@Autowired
 		CartService css;
+		
+		@Autowired
+		JavaMailSender mail;
 		
 			@RequestMapping("/")
 			public String home() {
@@ -561,6 +566,60 @@ import com.thisissporta.userrole.UserRoleService;
 				    	System.out.println("User not present");
 				    	return "true";
 				    }
+				}
+			 
+			    @RequestMapping(value="/emailconfrm" , method = RequestMethod.POST)
+				public String emailconfirm( HttpServletRequest req , HttpServletResponse resp ) {
+
+					String uemail = req.getParameter("email");
+					String subject = req.getParameter("subject");
+					String msg = req.getParameter("message");
+					
+					System.out.println( uemail );
+					System.out.println( subject );
+					System.out.println( msg );
+
+					SimpleMailMessage email = new SimpleMailMessage();
+					
+					email.setTo("thisissporta00@gmail.com");
+					email.setSubject(uemail+":"+subject);
+					email.setText(msg);
+					
+					try
+					{
+						mail.send(email);
+						
+						System.out.println("Mail 1 Sent");
+					}
+					catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+					
+
+					String uemail1 = req.getParameter("email");
+
+
+					System.out.println( uemail1 );
+					
+					
+					email.setTo(uemail1);
+					email.setSubject("Welcome to THIS IS SPORTA");
+					email.setText(" Thanks for Contacting Us \n We will get back to you soon \n\n Regards, \n THISISSPORTA Team");
+					
+					
+					try
+					{
+						mail.send(email);
+						
+						System.out.println("Mail 2 Sent");
+					}
+					catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+					
+					return "thanks";
 				}
 			 
 		}
