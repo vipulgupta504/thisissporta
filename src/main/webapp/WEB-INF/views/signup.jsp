@@ -9,6 +9,33 @@
 <c:import url="/head-meta" />
 <title>signup</title>
 </head>
+
+<script type="text/javascript">
+
+	var myApp = angular.module('myApp', []);
+
+	myApp.controller("abc",function($scope)
+	{
+		$scope.UserName = "";
+		$scope.UserNameCheck = false;
+		$scope.CheckUserName = function()
+		{
+			var reg = /^$/;
+			
+			$scope.UserNameCheck = reg.test($scope.UserName);
+			$scope.TestOverall();
+		}
+		
+		$scope.OverallError = false;
+		
+		$scope.TestOverall = function()
+		{
+			$scope.OverallError = $scope.UserNameCheck;
+		}
+	});
+	
+</script>
+
 <style>
 legend{
  color:black;
@@ -43,7 +70,7 @@ input[type=number]:focus {
 
 
 
-<div class="container">
+<div class="container" ng-app="myApp" ng-controller="abc">
   
   <!--  -->
   	<c:if test="${not empty success }">
@@ -70,8 +97,9 @@ input[type=number]:focus {
    <div class="form-group">
       <label class="control-label col-sm-2" for="username">User Name:</label>
       <div class="col-sm-10">
-         <form:input path="username" type="text" name="username" class="form-control" placeholder="Enter username" />
+         <form:input path="username" type="text" name="username" class="form-control" placeholder="Enter username" ng-model="UserName" ng-change="CheckUserName()" />
         <form:errors path="username" class="text text-danger" />
+        <label ng-if="UserNameCheck == true" class="text text-danger">Invalid Username Value. Cannot Be Empty</label>
       </div>
     </div>
     
@@ -137,7 +165,7 @@ input[type=number]:focus {
     
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button type="submit" class="btn btn-info" ng-disabled="OverallError == true">Submit</button>
       </div>
     </div>
     
@@ -145,7 +173,17 @@ input[type=number]:focus {
   </form:form>
 </div>
 
-<%@include file="footer.jsp" %>
+<br>
+ <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%-- <%@include file="footer.jsp" %> --%>
 
 </body>
 </html>

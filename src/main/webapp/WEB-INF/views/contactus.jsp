@@ -5,10 +5,11 @@
 <html>
 <head>
 <c:import url="head-meta.jsp"></c:import>
+</head>
  <style>
 body
 {
-   background:url('resources/images/texture10.jpg');
+   background:url('resources/images/texture9.jpg');
 }
 input[type=text], select {
     width: 100%;
@@ -44,33 +45,19 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-/* .row {
-    border-radius: 5px;
-    background-color: lightgrey;
-    padding: 10px 20px 10px 20px;
-} */
-#wrap{
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, lightblue), color-stop(1, lightblue));
-/* Webkit (Chrome 11+) */ 
-background-image: linear-gradient(to bottom, lightblue 0%, 	lightblue 100%);
-
-}  
-
 </style> 
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="resources/references/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <title>this is sporta</title>
-<c:import url="/head" />
-</head>
+
+
 <body>
 
+<c:import url="/head" />
 
   
   <br>
 
- <div class="container" id="wrap">
+ <div class="container view-container" style="background-color: rgba(255,255,255,0.8);">
   <div class="row">
         <div class="col-md-6 col-md-offset-3">
   			
@@ -107,7 +94,16 @@ background-image: linear-gradient(to bottom, lightblue 0%, 	lightblue 100%);
  
 
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<%@include file="footer.jsp" %>
+<%-- <%@include file="footer.jsp" %> --%>
+
+
 </body>
 </html>

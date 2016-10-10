@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-
 <style>
 
 h1
@@ -19,7 +18,36 @@ font-family:"Comic Sans MS";
 .jumbotron {
       margin-bottom: 0;
 	  background-image:url("resources/images/athletic-backgrounds-14.png");
-	  background-size: cover;
+	  background-size: cover; 
+    }
+    
+    .badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+}
+
+footer {
+	position: fixed;
+	
+	bottom: 0%;
+	width: 100%;
+	
+	z-index: 10;
+
+      background-color: black;
+      padding: 20px;
+      
     }
     
 </style>
@@ -27,11 +55,11 @@ font-family:"Comic Sans MS";
 <body>
     
 <div class="jumbotron">
- <div class="container text-center">
+<div class="container text-center">
   
     <h1 style="color:orange;">THIS IS SPORTA</h1>
    
-  </div>  
+</div>  
 </div>
 
 <nav class="navbar navbar-inverse">
@@ -74,7 +102,7 @@ font-family:"Comic Sans MS";
  {
  	%>
 						<li><a href="${pageContext.request.contextPath}/initiateflow"><span
-								class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+								class="glyphicon glyphicon-shopping-cart" ><asp:Label ID="lblCartCount" runat="server" class="badge badge-warning"  ForeColor="White"/></span>Cart</a></li>
 								<%
  }
  	%>
@@ -101,8 +129,12 @@ font-family:"Comic Sans MS";
   </div>
 </nav>
 
+	<footer class="container-fluid text-center">
+  <marquee behavior="alternate"><b>ThisIsSporta.@2016  &copy;  All Rights Reserved</b></marquee>
+ <!--  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+< --></footer>  
 
-    
-    
-    
-    </body>
+</body>

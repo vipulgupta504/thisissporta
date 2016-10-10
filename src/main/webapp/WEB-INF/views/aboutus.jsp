@@ -5,14 +5,12 @@
 <html>
 <head>
 <title>this is sporta</title>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="resources/references/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<c:import url="/head-meta"/>
+</head>
 <style>
   body
 {
-   background:url('resources/images/texture9.jpg');
+   background:url('resources/images/texture10.jpg');
 }
 .box{
 	width: 100%;
@@ -48,7 +46,6 @@
 }
 
 </style>
-</head>
 <body>
 
 <c:import url="head.jsp"/>
@@ -71,10 +68,14 @@
         
     </div>  
 </div>
- </body> 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+ </body> 
+
+
 
 </html>
 
-<%@include file="footer.jsp" %>
+<%-- <%@include file="footer.jsp" %> --%>

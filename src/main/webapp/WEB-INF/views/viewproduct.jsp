@@ -13,7 +13,7 @@
 
 <style>
 .view-container
-{ border-style: solid;
+{   border-style: solid;
     border-color: lightblue;
 }
   body
@@ -58,8 +58,6 @@
 <%
  }
  	%>
-
-
 </form>
 
 </div>
@@ -125,8 +123,6 @@
 		</div>		   
 		
 		<input path="id" type="hidden"/>
-            
-		
 		
 	</div>
 

@@ -8,9 +8,9 @@
 <c:import url="/head-meta"/>
 </head>
 <style>
- body {
+/* body {
    background: url(resources/images/texture11.jpg); 
-}
+}  */
 </style>
 
 <script type="text/javascript">
@@ -107,7 +107,7 @@
 				<td colspan="2">
 					<div style="margin: auto; width: 45%;">
 						<img src="${pageContext.request.contextPath}/{{x.ProductImage}}"
-							width="100%" class="img img-responsive img-thumbnail"></img>
+							width="80%" class="img img-responsive img-thumbnail"></img>
 					</div>
 				</td>
 			</tr>
@@ -137,6 +137,9 @@
 		</table>
 	</div>
 </div>
+<br>
+<br>
+<br>
 <br>
 
 </body>

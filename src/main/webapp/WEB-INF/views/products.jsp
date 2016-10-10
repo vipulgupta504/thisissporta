@@ -70,9 +70,8 @@ table tr:nth-child(even) {
 	
 </script>
 <body ng-App="myApp" ng-controller="myCtrl">
-<c:import url="head.jsp"/>
+<c:import url="/head"/>
 
-<br>
 <div align="right">
 							<%
 						if (request.isUserInRole("ADMIN"))
@@ -151,7 +150,14 @@ table tr:nth-child(even) {
 </html>
 	
 <br>
- 
-<%@include file="footer.jsp" %>
+ <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%-- <%@include file="footer.jsp" %> --%>
 </body>
 </html>

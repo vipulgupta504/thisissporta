@@ -77,10 +77,9 @@
         
     </div>  
 </div>
- </body> 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<%-- <%@include file="footer.jsp"%> --%>
 
+</body> 
 </html>
 
-<%@include file="footer.jsp" %>

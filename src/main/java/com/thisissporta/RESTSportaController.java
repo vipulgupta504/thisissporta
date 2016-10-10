@@ -113,7 +113,9 @@ public class RESTSportaController {
 
 		for (Cart item : list) {
 
-			if (item.getUserName().equals(user)) {
+			if (item.getUserName().equals(user)) 
+			{
+			
 				JSONObject jobj = new JSONObject();
 
 				jobj.put("ProductID", item.getProductID());

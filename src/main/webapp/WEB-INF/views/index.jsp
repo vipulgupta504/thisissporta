@@ -1,6 +1,7 @@
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,15 +10,17 @@
 </head>
 
 <style>
+
   .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
+  .carousel-inner > .item > a > img 
+       {
       height: 500px; 
       width: 100%;
       margin: auto; 
        }       
- body
+body
 {
-   background-image: url("resources/images/texture7.jpg");
+   background-image: url("resources/images/texture9.jpg");
 } 
 
 </style>
@@ -27,7 +30,7 @@
 <c:import url="/head"/>
     
 <div class="container">
-  <br>
+  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -82,35 +85,38 @@
   <a href="${pageContext.request.contextPath}/products?item=kookaburra+bat">
     <div class="col-sm-4">
       <div class="panel panel-primary">
-        <div class="panel-heading" align="center" >KOOKABURRA BATS</div>
+        <div class="panel-heading" align="center">KOOKABURRA BATS</div>
         <div class="panel-body"><img src="resources/images/download16.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
         <div class="panel-footer">The iconic Kahuna has been the spearhead of the Kookaburra range for the last 12 years. Its powerful profile, big edges and renowned graphics make it ideal for the stroke maker who likes to take control and lead by example.</div>
-      
       </div>
     </div>
+    </a>
     
+    <a href="${pageContext.request.contextPath}/products?item=adidas+football">
     <div class="col-sm-4">
-      <div class="panel panel-danger">
-      
+      <div class="panel panel-primary">
         <div class="panel-heading" align="center">ADIDAS FOOTBALL</div>
         <div class="panel-body"><img src="resources/images/download4.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">This new product by nike wont make you leave the field and remains durable for a long time. So play on!</div>
-      
+        <div class="panel-footer">This new product by nike wont make you leave the field and remains durable for a long time.</div>
       </div>
     </div>
+    </a>
+    
+     <a href="${pageContext.request.contextPath}/products?item=yonex+racquet">
     <div class="col-sm-4">
-      <div class="panel panel-success">
+      <div class="panel panel-primary">
         <div class="panel-heading" align="center">YONEX RACQUET</div>
         <div class="panel-body"><img src="resources/images/download6.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
         <div class="panel-footer">All badminton players have a reason to rejoice now with this new racquet from Yonex. Designed with the latest technology and equipments, this wont be damaged easily.</div>
       </div>
     </div>
+    </a>
   </div>
 </div>
 
 <br>
-
-<%@include file="footer.jsp" %>
+<br><br><br><br><br><br><br><br><br>
+<%-- <%@include file="footer.jsp"%> --%>
 
 </body>
 

@@ -9,9 +9,9 @@
 </head>
 
 <style>
- body {
+/* body {
    background: url(resources/images/texture9.jpg); 
-}
+} */
 </style>
 
 <script type="text/javascript">
@@ -172,6 +172,13 @@
 			<textarea rows="1" class="form-control"
 				style="resize: none; font-family: verdana; font-size: 30px"
 				ng-model="TotalPrice" ng-disabled="true"></textarea>
+				
+				
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 
 </body>
 </html>
