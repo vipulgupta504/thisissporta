@@ -66,7 +66,7 @@
 <br>
 <br>
 
-		<div class="container view-container" style="background-color: rgba(255,255,255,0.8);">
+	<div class="container view-container" style="background-color: rgba(255,255,255,0.8);">
 		<div class="row row-bottom">
 		
 			<div class="col-lg-6">
@@ -126,10 +126,13 @@
 		
 	</div>
 
-	<br>
 <br>
 <br>
 <br>
- </body> 
+<br>
+
+<%-- <%@include file="footer.jsp"%> --%>
+
+</body> 
 </html>
 

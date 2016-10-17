@@ -48,7 +48,7 @@ body
 
       <div class="item">
        <a href="${pageContext.request.contextPath}/products?item=nike+football">
-        <img src="resources/images/download23.jpg" alt="football" width="100" height="60">
+        <img src="resources/images/download24.jpg" alt="football" width="100" height="60">
         </a>
       </div>
     

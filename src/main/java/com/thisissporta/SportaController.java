@@ -413,19 +413,44 @@ import com.thisissporta.userrole.UserRoleService;
 						System.out.println("Invalid Qty");
 					}
 
-					Cart c = new Cart();
+					Cart c = null;
+					
+					List<Cart> cartlist = css.getAllProducts();
+					
+					for( Cart item:cartlist )
+					{
+						if( item.getProductID().equals(request.getParameter("pid")) && item.getUserName().equals(auth.getName()) )
+						{
+							int qtyrcvd = Integer.parseInt(request.getParameter("pqty"));
+							int currqty = Integer.parseInt( item.getQty() );
+							
+							item.setQty( (qtyrcvd + currqty) + "" );
+							
+							c = item;
+						
+							css.update(c);
+							
+							break;
+						}
+					}
+					
+					if( c == null )
+					{
+						c = new Cart();
+						
+						c.setProductID(request.getParameter("pid"));
+						c.setQty("" + qty);
 
-					c.setProductID(request.getParameter("pid"));
-					c.setQty("" + qty);
+						Product p = ps.getProduct(Integer.parseInt(request.getParameter("pid")));
 
-					Product p = ps.getProduct(Integer.parseInt(request.getParameter("pid")));
+						c.setName(p.getProductName());
+						c.setPrice(p.getProductPrice());
 
-					c.setName(p.getProductName());
-					c.setPrice(p.getProductPrice());
+						c.setUserName(auth.getName());
 
-					c.setUserName(auth.getName());
-
-					css.add(c);
+						css.add(c);
+					}
+					
 
 				}
 
@@ -581,7 +606,8 @@ import com.thisissporta.userrole.UserRoleService;
 
 					SimpleMailMessage email = new SimpleMailMessage();
 					
-					email.setTo("thisissporta00@gmail.com");
+					email.setTo(uemail);
+					email.setFrom("thisissporta00@gmail.com");
 					email.setSubject(uemail+":"+subject);
 					email.setText(msg);
 					
@@ -590,6 +616,24 @@ import com.thisissporta.userrole.UserRoleService;
 						mail.send(email);
 						
 						System.out.println("Mail 1 Sent");
+					}
+					catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+					
+					email = new SimpleMailMessage();
+					
+					email.setTo("thisissporta00@gmail.com");
+					email.setFrom(uemail);
+					email.setSubject(uemail+":"+subject);
+					email.setText(msg);
+					
+					try
+					{
+						mail.send(email);
+						
+						System.out.println("Mail from user Sent");
 					}
 					catch(Exception e)
 					{

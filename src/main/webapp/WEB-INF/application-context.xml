@@ -95,6 +95,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
                 <prop key="mail.transport.protocol">smtp</prop>
                 <prop key="mail.smtp.auth">true</prop>
                 <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.from.email">thisissporta00@gmail.com</prop>
                 <prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
             </props>
         </property>

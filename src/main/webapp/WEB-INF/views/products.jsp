@@ -11,11 +11,11 @@
 </head>
 
 <style>
-p{font-size:20px;
+p{font-size:25px;
 }
  body
 {
-   background:url('resources/images/bk5.jpg');
+   background:url('resources/images/texture12.jpg');
 }
 input[type=text] {
     width: 185px;
@@ -34,17 +34,7 @@ input[type=text] {
 input[type=text]:focus {
  width: 60%;
 }
-table, th , td  {
-  border: 1px solid grey;
-  border-collapse: collapse;
-  padding: 5px;
-}
-table tr:nth-child(odd) {
-  background-color: #f1f1f1;
-}
-table tr:nth-child(even) {
-  background-color: #ffffff;
-}
+
 </style>
 
 <script type="text/javascript">

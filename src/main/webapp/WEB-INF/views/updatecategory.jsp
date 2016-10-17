@@ -46,10 +46,7 @@
     z-index: 1;
     transition: all 0.5s ease 0s;
 }
-.box .box-content:hover{
-    box-shadow: 0 0 20px #fff;
-    background-color : rgba(132, 1, 1, 1);
-}
+
 </style>
 </head>
 <body>
@@ -60,7 +57,7 @@
 <div class="container">
     <div class="box">
         <div class="col-md-12 col-sm-6">
-            <div class="axe">
+            
                 
                 <h2 class="title"><b>Update Category</b></h2>
                 <div class="box-content">
@@ -79,7 +76,7 @@
                     </form:form>
                     
                     </p>  
-                </div>
+                
             </div>
         </div>
         

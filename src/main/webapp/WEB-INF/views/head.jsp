@@ -10,6 +10,7 @@ h1
 {
 font-family:"Comic Sans MS";
 }
+
 .navbar {
       margin-bottom: 50px;
       border-radius: 0;
@@ -19,7 +20,7 @@ font-family:"Comic Sans MS";
       margin-bottom: 0;
 	  background-image:url("resources/images/athletic-backgrounds-14.png");
 	  background-size: cover; 
-    }
+   		   }
     
     .badge {
   padding-left: 9px;
@@ -39,16 +40,12 @@ font-family:"Comic Sans MS";
 
 footer {
 	position: fixed;
-	
 	bottom: 0%;
 	width: 100%;
-	
 	z-index: 10;
-
-      background-color: black;
-      padding: 20px;
-      
-    }
+    background-color: black;
+    padding: 20px;  
+       }
     
 </style>
  
@@ -131,10 +128,7 @@ footer {
 
 	<footer class="container-fluid text-center">
   <marquee behavior="alternate"><b>ThisIsSporta.@2016  &copy;  All Rights Reserved</b></marquee>
- <!--  <form class="form-inline">Get deals:
-    <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Sign Up</button>
-  </form>
-< --></footer>  
+ </footer>  
 
 </body>
+</html>

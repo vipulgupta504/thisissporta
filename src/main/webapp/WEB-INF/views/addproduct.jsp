@@ -21,11 +21,11 @@
 	<div class="container">
     <div class="box">
         <div class="col-md-12 col-sm-6">
-            <div class="axe">
+            
                 
                 <h2 class="title"><b>Add Product</b></h2>
-                <div class="box-content">
-                    <p class="description">
+               
+                    
                     
                     <form:form method="POST" action="AddProductToDB" modelAttribute="Product" enctype="multipart/form-data">
                     
@@ -34,8 +34,6 @@
                     
                     	<br>
                     	
-                    	<%-- <form:label path="productCategory">Enter Product Category:</form:label>
-                    	<form:input type="text" path="productCategory" class="form-control"/> --%>
                     	
                     	<form:label path="productCategory">Enter Product Category:</form:label>
                     	<form:select path="productCategory" class="form-control">
@@ -78,18 +76,26 @@
 											;
 										}
 									</script>
+                    	
+                    	<form:input path="id" type="hidden"/> 
+                    	<br>
                     	<br>
                     	
                     	<input type="submit" class="btn btn-success" value="Add Product"/>
+                    	<br>
+                    	<br>
+                    	<br>
+                    	<br>
+                    	<br>
+                    	<br>
+                    	
+                 </form:form>
                     
-                    </form:form>
-                    
-                    </p>  
+                      
                 </div>
-            </div>
+            
         </div>
         
-    </div>  
 </div>
 
 </body>

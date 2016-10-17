@@ -88,7 +88,7 @@
                     
                     
                     	<div>
-                    		<label>Category Name: &nbsp;&nbsp; {{x.CategoryName}} </label>
+                    		<label>Category Name: &nbsp;&nbsp;  {{x.CategoryName}} </label>
                     		
                     		<a href="updatecategory/{{x.CategoryId}}" class="btn btn-danger">Update</a>
                     		
